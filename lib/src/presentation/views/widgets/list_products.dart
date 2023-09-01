@@ -50,6 +50,7 @@ class ListProducts extends StatelessWidget {
                   child: Text(
                     products[index]['price'],
                     style: const TextStyle(
+                      fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
                     ),
                   ),

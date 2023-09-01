@@ -29,7 +29,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Center(
         child: Text(
           titleAppBar,
-          style: TextStyle(color: Colors.orange, fontWeight: FontWeight.w900),
+          style: TextStyle(
+            color: primary,
+            fontWeight: FontWeight.w900,
+          ),
         ),
       ),
       actions: [
