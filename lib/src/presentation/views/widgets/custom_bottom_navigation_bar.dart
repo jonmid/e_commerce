@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'package:e_commerce/src/utils/constants/colors.dart';
+
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({
     super.key,
@@ -14,8 +16,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
       elevation: 15,
       showSelectedLabels: false,
       showUnselectedLabels: false,
-      selectedItemColor: Colors.orange,
-      unselectedItemColor: Colors.grey,
+      selectedItemColor: primary,
+      unselectedItemColor: disabledButton,
       items: [
         BottomNavigationBarItem(
           label: "home",

@@ -1,1 +1,1 @@
-const String titleAppBar = 'Home';
+const String titleAppBar = 'E-COMMERCE';

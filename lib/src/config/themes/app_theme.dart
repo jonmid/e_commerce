@@ -1,16 +1,16 @@
+import 'package:e_commerce/src/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
-
-const Color _primaryColor = Color(0xFFF16A26);
 
 class AppTheme {
   ThemeData theme() {
     return ThemeData(
       appBarTheme: const AppBarTheme(
-        color: Colors.white,
+        scrolledUnderElevation: 0,
+        color: white,
       ),
       useMaterial3: true,
-      scaffoldBackgroundColor: Colors.white,
-      colorSchemeSeed: _primaryColor,
+      scaffoldBackgroundColor: white,
+      colorSchemeSeed: primary,
     );
   }
 }
