@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:e_commerce/src/utils/constants/general.dart';
 import 'package:e_commerce/src/config/themes/app_theme.dart';
 import 'package:e_commerce/src/presentation/views/screens/home.dart';
+import 'package:e_commerce/src/presentation/views/screens/profile.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -13,7 +14,11 @@ class App extends StatelessWidget {
       title: appTitle,
       debugShowCheckedModeBanner: false,
       theme: AppTheme().theme(),
-      home: const Home(),
+      // home: const Home(),
+      routes: {
+        '/': (context) => const Home(),
+        '/profile': (context) => const Profile()
+      },
     );
   }
 }

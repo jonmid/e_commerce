@@ -21,7 +21,9 @@ class ListCategoriesHome extends StatelessWidget {
             return Column(
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
                   child: Container(
                     height: 60,
                     width: 60,
