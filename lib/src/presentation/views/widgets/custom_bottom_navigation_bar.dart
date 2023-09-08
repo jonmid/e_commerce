@@ -1,9 +1,9 @@
-import 'package:e_commerce/src/presentation/views/screens/home.dart';
-import 'package:e_commerce/src/presentation/views/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:e_commerce/src/utils/constants/colors.dart';
+import 'package:e_commerce/src/presentation/views/screens/home.dart';
+import 'package:e_commerce/src/presentation/views/screens/profile.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:e_commerce/src/data/datasources/local/categories.dart';
 
@@ -22,7 +23,9 @@ class ListCategoriesHome extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/profile');
+                    // Navigator.pushNamed(context, '/profile');
+                    // Navigator.pushNamed(context, '/profile');
+                    context.push('/bookmarks');
                   },
                   child: Container(
                     height: 60,

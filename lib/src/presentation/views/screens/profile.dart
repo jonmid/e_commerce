@@ -1,6 +1,8 @@
-import 'package:e_commerce/src/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+
+import 'package:e_commerce/src/utils/constants/colors.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -19,7 +21,7 @@ class Profile extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            Navigator.pop(context);
+            context.push('/');
           },
         ),
         title: const Text('Profile'),
