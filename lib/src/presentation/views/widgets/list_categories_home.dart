@@ -23,9 +23,7 @@ class ListCategoriesHome extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    // Navigator.pushNamed(context, '/profile');
-                    // Navigator.pushNamed(context, '/profile');
-                    context.push('/bookmarks');
+                    context.push('/notifications');
                   },
                   child: Container(
                     height: 60,

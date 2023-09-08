@@ -15,4 +15,8 @@ final appRouter = GoRouter(routes: [
     path: '/bookmarks',
     builder: (context, state) => const Bookmarks(),
   ),
+  GoRoute(
+    path: '/notifications',
+    builder: (context, state) => const Notifications(),
+  ),
 ]);
