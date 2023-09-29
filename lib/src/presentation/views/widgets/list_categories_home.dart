@@ -23,7 +23,7 @@ class ListCategoriesHome extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    context.push('/notifications');
+                    context.go('/detail-product');
                   },
                   child: Container(
                     height: 60,

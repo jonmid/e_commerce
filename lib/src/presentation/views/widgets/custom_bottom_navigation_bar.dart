@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:e_commerce/src/utils/constants/colors.dart';
-import 'package:e_commerce/src/presentation/views/screens/home.dart';
-import 'package:e_commerce/src/presentation/views/screens/profile.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
+  final void Function({required int position}) onChangeView;
+
   const CustomBottomNavigationBar({
     super.key,
+    required this.onChangeView,
   });
 
   @override
@@ -16,20 +17,17 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  final int _currentIndex = 0;
-
-  final List<Widget> _screens = [
-    const Home(),
-    const Placeholder(),
-    const Placeholder(),
-    const Profile(),
-  ];
+  int _currentIndex = 0;
 
   void _onTabTapped(int index) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => _screens[index]),
-    );
+    widget.onChangeView(position: index);
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+  Color _getColor(int index) {
+    return _currentIndex == index ? primary : Colors.grey;
   }
 
   @override
@@ -47,20 +45,47 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       items: [
         BottomNavigationBarItem(
           label: "home",
-          icon: SvgPicture.asset('assets/svg/home.svg', width: 24, height: 24),
+          icon: ColorFiltered(
+            colorFilter: ColorFilter.mode(_getColor(0), BlendMode.srcIn),
+            child: SvgPicture.asset(
+              'assets/svg/home.svg',
+              width: 24,
+              height: 24,
+            ),
+          ),
         ),
         BottomNavigationBarItem(
           label: "explore",
-          icon:
-              SvgPicture.asset('assets/svg/marker.svg', width: 24, height: 24),
+          icon: ColorFiltered(
+            colorFilter: ColorFilter.mode(_getColor(1), BlendMode.srcIn),
+            child: SvgPicture.asset(
+              'assets/svg/marker.svg',
+              width: 24,
+              height: 24,
+            ),
+          ),
         ),
         BottomNavigationBarItem(
           label: "Movies",
-          icon: SvgPicture.asset('assets/svg/bell.svg', width: 24, height: 24),
+          icon: ColorFiltered(
+            colorFilter: ColorFilter.mode(_getColor(2), BlendMode.srcIn),
+            child: SvgPicture.asset(
+              'assets/svg/bell.svg',
+              width: 24,
+              height: 24,
+            ),
+          ),
         ),
         BottomNavigationBarItem(
           label: "Profile",
-          icon: SvgPicture.asset('assets/svg/user.svg', width: 24, height: 24),
+          icon: ColorFiltered(
+            colorFilter: ColorFilter.mode(_getColor(3), BlendMode.srcIn),
+            child: SvgPicture.asset(
+              'assets/svg/user.svg',
+              width: 24,
+              height: 24,
+            ),
+          ),
         )
       ],
     );

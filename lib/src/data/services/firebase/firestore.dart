@@ -15,20 +15,3 @@ Future<List> getAllCollection({required String nameCollection}) async {
 
   return data;
 }
-
-Future<List> getOneCollection({
-  required String nameCollection,
-  required String title,
-}) async {
-  List data = [];
-
-  CollectionReference collectionReference = db.collection(nameCollection);
-
-  QuerySnapshot queryData = await collectionReference.get();
-
-  for (var item in queryData.docs) {
-    data.add(item.data());
-  }
-
-  return data;
-}

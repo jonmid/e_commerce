@@ -1,6 +1,7 @@
-import 'package:e_commerce/src/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import 'package:e_commerce/src/utils/constants/colors.dart';
 import 'package:e_commerce/src/data/services/firebase/firestore.dart';
 
 class ListProducts extends StatefulWidget {
@@ -38,38 +39,43 @@ class _ListProductsState extends State<ListProducts> {
                   ),
                   itemCount: data?.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image(
-                            image: NetworkImage(data?[index]['img']),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            data?[index]['title'],
-                            textAlign: TextAlign.left,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              color: textSecondaryLight,
+                    return GestureDetector(
+                      onTap: () {
+                        context.go('/detail-product');
+                      },
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image(
+                              image: NetworkImage(data?[index]['img']),
+                              fit: BoxFit.cover,
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            data?[index]['price'].toString() ?? '',
-                            style: const TextStyle(
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.bold,
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              data?[index]['title'],
+                              textAlign: TextAlign.left,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                color: textSecondaryLight,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(height: 5),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              data?[index]['price'].toString() ?? '',
+                              style: const TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     );
                   },
                 );

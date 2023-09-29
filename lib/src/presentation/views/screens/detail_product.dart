@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:e_commerce/src/utils/constants/colors.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class DetailProduct extends StatelessWidget {
+  const DetailProduct({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,13 @@ class Profile extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            context.push('/');
+            context.go('/');
           },
         ),
-        title: const Text('Profile'),
+        title: const Text('Detail product'),
       ),
       body: const Center(
-        child: Text('Profile'),
+        child: Text('Detail Product'),
       ),
     );
   }
