@@ -10,3 +10,6 @@ const Color secondaryButton = Color(0xFFF0F0F0);
 const Color disabledField = Color(0xFFF5F5F5);
 const Color success = Color(0xFF27AE60);
 const Color strokeDivider = Color(0xFFDBDBDB);
+const Color colorBorder = Color(0xFFF0F0F0);
+const Color backgroundCircle2 = Color(0xFFB4916C);
+const Color backgroundCircle3 = Color(0xFFE4CBAD);
