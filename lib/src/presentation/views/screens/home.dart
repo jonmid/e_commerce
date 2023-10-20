@@ -1,4 +1,3 @@
-import 'package:e_commerce/src/data/services/firebase/auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:e_commerce/src/presentation/views/widgets/custom_app_bar.dart';
@@ -8,7 +7,6 @@ import 'package:e_commerce/src/presentation/views/widgets/list_bookmarks.dart';
 import 'package:e_commerce/src/presentation/views/widgets/list_notifications.dart';
 import 'package:e_commerce/src/presentation/views/widgets/view_profile.dart';
 import 'package:e_commerce/src/presentation/views/widgets/custom_bottom_navigation_bar.dart';
-import 'package:go_router/go_router.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -18,7 +16,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final FirebaseAuthService _auth = FirebaseAuthService();
   int _currentIndex = 0;
 
   final List<Widget> _views = [
